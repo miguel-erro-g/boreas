@@ -288,7 +288,8 @@ classdef mlepSO < matlab.System &...
             
             % --- Create outbus
             elems = cell(obj.nOut,1);
-            Ts = obj.timestep;
+%             Ts = obj.timestep;
+            Ts = -1;
             signames = obj.outputSigName;
             for i = 1:obj.nOut
                 elems{i} = cell(1,6);
