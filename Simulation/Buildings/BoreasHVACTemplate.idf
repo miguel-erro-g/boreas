@@ -4,6 +4,13 @@
 !-NOTE: All comments with '!-' are ignored by the IDFEditor and are generated automatically.
 !-      Use '!' comments if they need to be retained when using the IDFEditor.
 
+Schedule:Compact,
+    ZONE CONTROL TYPE SCHED, !- Name
+    Control Type,            !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: Alldays,            !- Field 2
+    Until: 24:00,  4;        !- Field 4
+
 ExternalInterface:Schedule,
     SetPointTemperature,     !- Name
     Temperature,             !- Schedule Type Limits Name
@@ -2063,9 +2070,9 @@ Schedule:Compact,
 ZoneControl:Thermostat,
     SPACE1-1 Thermostat,     !- Name
     SPACE1-1,                !- Zone or ZoneList Name
-    HVACTemplate-Always 4,   !- Control Type Schedule Name
-    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
-    All Zones Dual SP Control;  !- Control 1 Name
+    ZONE CONTROL TYPE SCHED, !- Control Type Schedule Name
+    ThermostatSetpoint:SingleCooling,  !- Control 1 Object Type
+    CoolingSetPoint;         !- Control 1 Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA SPACE1-1,        !- Name
@@ -2185,9 +2192,9 @@ Branch,
 ZoneControl:Thermostat,
     SPACE2-1 Thermostat,     !- Name
     SPACE2-1,                !- Zone or ZoneList Name
-    HVACTemplate-Always 4,   !- Control Type Schedule Name
-    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
-    All Zones Dual SP Control;  !- Control 1 Name
+    ZONE CONTROL TYPE SCHED, !- Control Type Schedule Name
+    ThermostatSetpoint:SingleCooling,  !- Control 1 Object Type
+    CoolingSetPoint;         !- Control 1 Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA SPACE2-1,        !- Name
@@ -2301,9 +2308,9 @@ Branch,
 ZoneControl:Thermostat,
     SPACE3-1 Thermostat,     !- Name
     SPACE3-1,                !- Zone or ZoneList Name
-    HVACTemplate-Always 4,   !- Control Type Schedule Name
-    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
-    All Zones Dual SP Control;  !- Control 1 Name
+    ZONE CONTROL TYPE SCHED, !- Control Type Schedule Name
+    ThermostatSetpoint:SingleCooling,  !- Control 1 Object Type
+    CoolingSetPoint;         !- Control 1 Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA SPACE3-1,        !- Name
@@ -2417,9 +2424,9 @@ Branch,
 ZoneControl:Thermostat,
     SPACE4-1 Thermostat,     !- Name
     SPACE4-1,                !- Zone or ZoneList Name
-    HVACTemplate-Always 4,   !- Control Type Schedule Name
-    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
-    All Zones Dual SP Control;  !- Control 1 Name
+    ZONE CONTROL TYPE SCHED, !- Control Type Schedule Name
+    ThermostatSetpoint:SingleCooling,  !- Control 1 Object Type
+    CoolingSetPoint;         !- Control 1 Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA SPACE4-1,        !- Name
@@ -2533,9 +2540,9 @@ Branch,
 ZoneControl:Thermostat,
     SPACE5-1 Thermostat,     !- Name
     SPACE5-1,                !- Zone or ZoneList Name
-    HVACTemplate-Always 4,   !- Control Type Schedule Name
-    ThermostatSetpoint:DualSetpoint,  !- Control 1 Object Type
-    All Zones Dual SP Control;  !- Control 1 Name
+    ZONE CONTROL TYPE SCHED, !- Control Type Schedule Name
+    ThermostatSetpoint:SingleCooling,  !- Control 1 Object Type
+    CoolingSetPoint;         !- Control 1 Name
 
 DesignSpecification:OutdoorAir,
     SZ DSOA SPACE5-1,        !- Name
