@@ -4,18 +4,18 @@
 
 fis1 = mamfis('Name','PrecalculateSetPointChange');
 % Inputs
-    fis1 = addInput(fis1,[0    10],'Name','deltaT');
-            fis1 = addMF(fis1,"deltaT","trapmf",[-1 0 1 2],"Name","chico");
-            fis1 = addMF(fis1,"deltaT","trapmf",[1 2 3 4],"Name","mediano");
-            fis1 = addMF(fis1,"deltaT","trapmf",[3 4 15 16],"Name","grande");
+    fis1 = addInput(fis1,[0 10],'Name','deltaT');
+            fis1 = addMF(fis1,"deltaT","zmf",[1 2],"Name","chico");
+            fis1 = addMF(fis1,"deltaT","gaussmf",[0.5 2.5],"Name","mediano");
+            fis1 = addMF(fis1,"deltaT","smf",[3 4],"Name","grande");
             figure
             plotmf(fis1,"input",1)
 
     fis1 = addInput(fis1,[0 24]*60,'Name','Horario');
-            fis1 = addMF(fis1,"Horario","trapmf",[0 0 6 6.5]*60,"Name","B");
-            fis1 = addMF(fis1,"Horario","trapmf",[6 6.5 19.5 20]*60,"Name","I1");
+            fis1 = addMF(fis1,"Horario","zmf",[6 6.5]*60,"Name","B");
+            fis1 = addMF(fis1,"Horario","gbellmf",[6 6.5 13]*60,"Name","I1");
             fis1 = addMF(fis1,"Horario","trapmf",[19.5 20 22 22.5]*60,"Name","P");
-            fis1 = addMF(fis1,"Horario","trapmf",[22 22.5 24 25]*60,"Name","I2");
+            fis1 = addMF(fis1,"Horario","smf",[22 22.5]*60,"Name","I2");
             figure
             plotmf(fis1,"input",2)
 
